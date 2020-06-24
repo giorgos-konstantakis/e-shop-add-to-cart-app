@@ -1,16 +1,25 @@
 <div class="row">
         <?php
+            // Displaying the basket and performing all the necessary calculations
             if(!empty($_SESSION["cart"])){
                 $total_product_price = 0;
                 $total_shipping_costs = 0;
                 foreach($_SESSION["cart"] as $keys => $values){
         ?>
             <div class="col-md-2 cart-font-size text-center"><?php echo $values["item_name"]; ?></div>
-            <div class="col-md-2 cart-font-size text-center"><?php echo $values["item_quantity"]; ?></div>
+            <div class="col-md-3 cart-font-size text-center">
+                <form method="post" action="index.php?action=change_quantity&id=<?php echo $values["item_id"]; ?>">
+                    <input class="quantity" type="submit" name="minus" value="-">
+                    <input class="quantity" type="quantity_basket" name="quantity_basket" value="<?php echo $values["item_quantity"]; ?>" readonly>
+                    <input class="quantity" type="submit" name="plus" value="+">
+                </form>
+            </div>
             <div class="col-md-2 cart-font-size text-center"><?php echo $values["item_price"]; ?> €</div>
             <div class="col-md-2 cart-font-size text-center"><?php echo number_format(5*$values["item_quantity"]*$values["item_weightFactor"],2); ?> €</div>
             <div class="col-md-2 cart-font-size text-center"><?php echo number_format($values["item_quantity"]*$values["item_price"],2); ?> €</div>
-            <div class="col-md-2 cart-font-size text-center"><a href="index.php?action=delete&id=<?php echo $values["item_id"] ?>"><span>Remove</span></a></div>
+            <div class="col-md-1 cart-font-size text-center">
+                <a href="index.php?action=delete&id=<?php echo $values["item_id"] ?>"><span class="remove">x</span></a>
+            </div>
         <?php   
                 $discount = 0;
                 $total_product_price = $total_product_price + ($values["item_quantity"]*$values["item_price"]);

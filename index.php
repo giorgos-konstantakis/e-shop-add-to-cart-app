@@ -33,23 +33,23 @@
 <!--PRODUCTS AND CART-->
 <div class="container mt-3 mb-5">
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-5">
             <div class="card">
                 <div class="card-header text-center text-light bg-secondary">
                     <h5>Products</h5>
                 </div>
                 <div class="card-body">
                     <div class="row mb-2">
-                        <div class="col-md-3"><strong>Product</strong></div>
-                        <div class="col-md-2"><strong>Price</strong></div>
-                        <div class="col-md-4"><strong>Quantity</strong></div>
-                        <div class="col-md-3"><strong>Add to cart</strong></div>
+                        <div class="col-md-3 text-center"><strong>Product</strong></div>
+                        <div class="col-md-2 text-center"><strong>Price</strong></div>
+                        <div class="col-md-4 text-center"><strong>Quantity</strong></div>
+                        <div class="col-md-3 text-center"><strong>Add</strong></div>
                     </div>
                         <?php include "./includes/productsRender.php"; ?>
                 </div>
             </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-7">
             <div class="card">
                 <div class="card-header text-center text-light bg-secondary">
                     <h5>Cart</h5>
@@ -57,11 +57,11 @@
                 <div class="card-body">
                     <div class="row mb-2">
                         <div class="col-md-2 cart-font-size text-center"><strong>Product</strong></div>
-                        <div class="col-md-2 cart-font-size text-center"><strong>Quantity</strong></div>
+                        <div class="col-md-3 cart-font-size text-center"><strong>Quantity</strong></div>
                         <div class="col-md-2 cart-font-size text-center"><strong>Unit Price</strong></div>
                         <div class="col-md-2 cart-font-size text-center"><strong>Shipping Costs</strong></div>
                         <div class="col-md-2 cart-font-size text-center"><strong>Total Price</strong></div>
-                        <div class="col-md-2 cart-font-size text-center"><strong>Remove</strong></div>
+                        <div class="col-md-1 cart-font-size text-center"><strong>X</strong></div>
                     </div>
                     <hr>
                     <?php include "./includes/cartRender.php" ?>
